@@ -1,0 +1,98 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "socratic-mandate"
+version = "2.0.0"
+description = "A Human-Centric AI Safety Framework for LLM Systems"
+readme = "README.md"
+license = "MIT"
+authors = [
+    { name = "Nicholas Reid Angell", email = "contact@example.com" }
+]
+keywords = [
+    "ai-safety",
+    "llm",
+    "cognitive-safety",
+    "trust-resilience",
+    "socratic-mandate",
+    "trs",
+    "ai-ethics",
+    "responsible-ai",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Security",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "pydantic>=2.0",
+    "httpx>=0.24",
+]
+
+[project.optional-dependencies]
+api = [
+    "fastapi>=0.100",
+    "uvicorn>=0.22",
+]
+storage = [
+    "sqlalchemy>=2.0",
+    "asyncpg>=0.28",
+    "redis>=4.5",
+]
+openai = [
+    "openai>=1.0",
+]
+anthropic = [
+    "anthropic>=0.20",
+]
+all = [
+    "socratic-mandate[api,storage,openai,anthropic]",
+]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "ruff>=0.1",
+    "mypy>=1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-username/socratic-mandate"
+Documentation = "https://github.com/your-username/socratic-mandate#readme"
+Repository = "https://github.com/your-username/socratic-mandate"
+Issues = "https://github.com/your-username/socratic-mandate/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ["py39", "py310", "py311", "py312"]
+
+[tool.ruff]
+line-length = 88
+select = ["E", "F", "I", "N", "W", "UP"]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
