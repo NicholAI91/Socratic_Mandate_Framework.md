@@ -1,0 +1,1 @@
+# Socratic_Mandate_Framework.md
