@@ -12,7 +12,7 @@ class TestTRSEngine:
     @pytest.mark.asyncio
     async def test_trs_calculation_basic(self):
         """Test basic TRS calculation."""
-        from src.trs import TRSEngine
+        from trs import TRSEngine
         
         engine = TRSEngine()
         
@@ -38,7 +38,7 @@ class TestTRSEngine:
     @pytest.mark.asyncio
     async def test_trs_gaming_detection_fast_response(self):
         """Test gaming detection for too-fast responses."""
-        from src.trs import TRSEngine
+        from trs import TRSEngine
         
         engine = TRSEngine()
         
@@ -55,7 +55,7 @@ class TestTRSEngine:
     @pytest.mark.asyncio
     async def test_trs_gaming_detection_short_response(self):
         """Test gaming detection for too-short responses."""
-        from src.trs import TRSEngine
+        from trs import TRSEngine
         
         engine = TRSEngine()
         
@@ -76,7 +76,7 @@ class TestSocraticShell:
     @pytest.mark.asyncio
     async def test_pii_redaction(self):
         """Test PII redaction in messages."""
-        from src.shell import SocraticShell
+        from shell import SocraticShell
         
         shell = SocraticShell()
         
@@ -92,7 +92,7 @@ class TestSocraticShell:
     @pytest.mark.asyncio
     async def test_prompt_injection_detection(self):
         """Test prompt injection detection."""
-        from src.shell import SocraticShell, EscalationLevel
+        from shell import SocraticShell, EscalationLevel
         
         shell = SocraticShell()
         
@@ -108,7 +108,7 @@ class TestSocraticShell:
     @pytest.mark.asyncio
     async def test_sensitive_topic_friction(self):
         """Test friction application for sensitive topics."""
-        from src.shell import SocraticShell, ConsentTier
+        from shell import SocraticShell, ConsentTier
         
         shell = SocraticShell()
         
@@ -126,7 +126,7 @@ class TestSocraticShell:
     @pytest.mark.asyncio
     async def test_consent_tier_escalation(self):
         """Test consent tier escalation for crisis topics."""
-        from src.shell import SocraticShell, ConsentTier
+        from shell import SocraticShell, ConsentTier
         
         shell = SocraticShell()
         
@@ -145,7 +145,7 @@ class TestTRSAnalyzer:
 
     def test_friction_response_quality(self):
         """Test friction response quality analysis."""
-        from src.trs import DefaultTRSAnalyzer
+        from trs import DefaultTRSAnalyzer
         
         analyzer = DefaultTRSAnalyzer()
         
@@ -169,7 +169,7 @@ class TestTRSAnalyzer:
 
     def test_verification_intent_detection(self):
         """Test verification intent detection."""
-        from src.trs import DefaultTRSAnalyzer
+        from trs import DefaultTRSAnalyzer
         
         analyzer = DefaultTRSAnalyzer()
         
@@ -179,7 +179,7 @@ class TestTRSAnalyzer:
 
     def test_correction_intent_detection(self):
         """Test correction intent detection."""
-        from src.trs import DefaultTRSAnalyzer
+        from trs import DefaultTRSAnalyzer
         
         analyzer = DefaultTRSAnalyzer()
         
